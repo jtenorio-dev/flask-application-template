@@ -1,0 +1,40 @@
+[default]
+TITLE = 'app'
+DEBUG = true
+SQLALCHEMY_DATABASE_URI = 'sqlite:///development.db'
+SECRET_KEY = 'my-super-secret-key'
+SERVER_NAME = 'localhost:5000'
+
+# SQLALCHEMY RELATED CONFIG
+SQLALCHEMY_ECHO = false
+SQLALCHEMY_TRACK_MODIFICATIONS = false
+
+# CACHING RELATED CONFIG
+CACHE_TYPE = 'simple' # redis memcached
+
+# JWT RELATED CONFIG
+JWT_SECRET_KEY = 'super-secure-secret'
+
+# FLASGGER RELATED CONIFG
+SWAGGER.title = 'Flask Application'
+SWAGGER.description = 'A template for flask application.'
+SWAGGER.uiversion = 3
+SWAGGER.specs_route = '/apidocs/'
+SWAGGER.openapi = "3.0.2"
+SWAGGER.host = 'localhost:5000'
+SWAGGER.schemes  = ['http']
+SWAGGER.contact.responsibleDeveloper = 'Jomari Tenorio'
+SWAGGER.contact.email = 'jtenorio.dev@gmail.com'
+SWAGGER.contact.url = 'https://github.com/jtenorio-dev'
+
+EXTENSIONS = [
+    'app.ext.db:init'
+]
+
+[testing]
+SQLALCHEMY_ECHO = false
+SQLALCHEMY_DATABASE_URI = 'sqlite:///testing.db'
+
+[production]
+SQLALCHEMY_ECHO = false
+SQLALCHEMY_DATABASE_URI = 'sqlite:///production.db'
