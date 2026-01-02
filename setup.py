@@ -19,7 +19,7 @@ def read_requirements(path):
     ]
 
 setup(
-    name="lms-api",
+    name="flask-application",
     version=read("app", "VERSION"),
     description="Flask Template",
     url="https://github.com/jtenorio-dev/template",
